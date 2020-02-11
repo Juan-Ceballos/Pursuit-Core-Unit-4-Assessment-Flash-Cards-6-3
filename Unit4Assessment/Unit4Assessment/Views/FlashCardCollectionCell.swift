@@ -25,4 +25,5 @@ class FlashCardCollectionCell: UICollectionViewCell {
     func commonInit()   {
         
     }
+    
 }

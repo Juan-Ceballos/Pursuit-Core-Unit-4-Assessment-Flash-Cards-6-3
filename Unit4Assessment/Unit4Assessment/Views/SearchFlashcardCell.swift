@@ -12,6 +12,11 @@ class SearchFlashcardCell: UICollectionViewCell {
     
     public let cellReuseIdentifier = "searchFlashcardCell"
     
+    public lazy var termLabel: UILabel =    {
+        let label = UILabel()
+        return label
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -22,8 +27,25 @@ class SearchFlashcardCell: UICollectionViewCell {
         commonInit()
     }
     
+    func configureCell(flashcard: Flashcard)    {
+        termLabel.text = flashcard.quizTitle
+    }
+    
     func commonInit()   {
+        setupTermLabelText()
+    }
+    
+    private func setupTermLabelText()   {
+        addSubview(termLabel)
         
+        termLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+        
+            termLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
+            termLabel.centerYAnchor.constraint(equalTo: centerYAnchor)
+        
+        ])
     }
 }
 

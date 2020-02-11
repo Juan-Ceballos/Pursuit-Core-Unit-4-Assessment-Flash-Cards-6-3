@@ -8,28 +8,24 @@
 
 import Foundation
 
-struct Flashcard: Codable    {
-    let flash: [FlashcardWrapper]
-}
-
-struct FlashcardWrapper: Codable {
+struct Flashcard: Codable {
     let quizTitle: String
     let facts: [String]
 }
 
 extension Flashcard {
-    static func fetchIOSQuestions(from data: Data) -> [FlashcardWrapper] {
-        var flashcards = [FlashcardWrapper]()
+    static func fetchIOSQuestions() -> [Flashcard] {
+        var flashcards = [Flashcard]()
         
-        guard let fileURL = Bundle.main.url(forResource: "iOSQuestion", withExtension: "json")
+        guard let fileURL = Bundle.main.url(forResource: "iOSQuestions", withExtension: "json")
         else    {
             fatalError()
         }
         
         do  {
             let data = try Data(contentsOf: fileURL)
-            let flashcardData = try JSONDecoder().decode(Flashcard.self, from: data)
-            flashcards = flashcardData.flash
+            let flashcardData = try JSONDecoder().decode([Flashcard].self, from: data)
+            flashcards = flashcardData
         }
         catch   {
             fatalError()

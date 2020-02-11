@@ -21,6 +21,11 @@ class SearchFlashcardController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemTeal
         searchFlashcardView.searchFlashcardCollectionView.dataSource = self
+        loadFlahshcards()
+    }
+    
+    func loadFlahshcards()   {
+        flashcards = Flashcard.fetchIOSQuestions()
     }
 
 }
@@ -34,6 +39,9 @@ extension SearchFlashcardController: UICollectionViewDataSource {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "searchFlashcardCell", for: indexPath) as! SearchFlashcardCell
         cell.backgroundColor = .systemOrange
+        let flashcard = flashcards[indexPath.row]
+        cell.configureCell(flashcard: flashcard)
+        
         return cell
     }
     

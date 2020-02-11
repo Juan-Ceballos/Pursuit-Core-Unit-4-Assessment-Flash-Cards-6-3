@@ -17,7 +17,7 @@ class CreateFlashcardView: UIView {
     public lazy var termTextField: UITextField =    {
         let textField = UITextField()
         textField.placeholder = "enter study term"
-        textField.backgroundColor = .systemRed
+        textField.borderStyle = .roundedRect
         return textField
     }()
     
@@ -25,7 +25,6 @@ class CreateFlashcardView: UIView {
         let textView = UITextView()
         textView.text = defaultText
         textView.textColor = .systemGray
-        textView.backgroundColor = .systemRed
         return textView
     }()
     
