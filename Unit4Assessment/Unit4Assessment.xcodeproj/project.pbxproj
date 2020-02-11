@@ -8,10 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		3E3965F923F30662004CB4ED /* FlashcardTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3965F823F30662004CB4ED /* FlashcardTabBarController.swift */; };
-		3E3965FB23F307A3004CB4ED /* FlashcardCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3965FA23F307A3004CB4ED /* FlashcardCollection.swift */; };
 		3E3965FD23F307C4004CB4ED /* CreateFlashcardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3965FC23F307C4004CB4ED /* CreateFlashcardController.swift */; };
 		3E3965FF23F307E7004CB4ED /* SearchFlashcardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3965FE23F307E7004CB4ED /* SearchFlashcardController.swift */; };
 		3E39660223F3080B004CB4ED /* ImageKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3E39660123F3080B004CB4ED /* ImageKit */; };
+		3E39660723F31E26004CB4ED /* FlashcardCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E39660623F31E26004CB4ED /* FlashcardCollectionView.swift */; };
+		3E39660A23F31E68004CB4ED /* FrontCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E39660923F31E68004CB4ED /* FrontCard.swift */; };
+		3E39660C23F31E93004CB4ED /* BackCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E39660B23F31E93004CB4ED /* BackCard.swift */; };
+		3E39660E23F320BD004CB4ED /* FlashCardCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E39660D23F320BD004CB4ED /* FlashCardCollectionCell.swift */; };
+		3E39661023F329F1004CB4ED /* FlashcardCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E39660F23F329F1004CB4ED /* FlashcardCollectionController.swift */; };
 		5790239823F2EE39000AA216 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5790239723F2EE39000AA216 /* AppDelegate.swift */; };
 		5790239A23F2EE39000AA216 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5790239923F2EE39000AA216 /* SceneDelegate.swift */; };
 		579023A123F2EE3B000AA216 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 579023A023F2EE3B000AA216 /* Assets.xcassets */; };
@@ -31,9 +35,13 @@
 
 /* Begin PBXFileReference section */
 		3E3965F823F30662004CB4ED /* FlashcardTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardTabBarController.swift; sourceTree = "<group>"; };
-		3E3965FA23F307A3004CB4ED /* FlashcardCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardCollection.swift; sourceTree = "<group>"; };
 		3E3965FC23F307C4004CB4ED /* CreateFlashcardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFlashcardController.swift; sourceTree = "<group>"; };
 		3E3965FE23F307E7004CB4ED /* SearchFlashcardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFlashcardController.swift; sourceTree = "<group>"; };
+		3E39660623F31E26004CB4ED /* FlashcardCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardCollectionView.swift; sourceTree = "<group>"; };
+		3E39660923F31E68004CB4ED /* FrontCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontCard.swift; sourceTree = "<group>"; };
+		3E39660B23F31E93004CB4ED /* BackCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackCard.swift; sourceTree = "<group>"; };
+		3E39660D23F320BD004CB4ED /* FlashCardCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardCollectionCell.swift; sourceTree = "<group>"; };
+		3E39660F23F329F1004CB4ED /* FlashcardCollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardCollectionController.swift; sourceTree = "<group>"; };
 		5790239423F2EE39000AA216 /* Unit4Assessment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Unit4Assessment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5790239723F2EE39000AA216 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5790239923F2EE39000AA216 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +72,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E39660323F31B4F004CB4ED /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5790239723F2EE39000AA216 /* AppDelegate.swift */,
+				5790239923F2EE39000AA216 /* SceneDelegate.swift */,
+				579023A023F2EE3B000AA216 /* Assets.xcassets */,
+				579023A223F2EE3B000AA216 /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3E39660423F31B80004CB4ED /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3E3965F823F30662004CB4ED /* FlashcardTabBarController.swift */,
+				3E39660F23F329F1004CB4ED /* FlashcardCollectionController.swift */,
+				3E3965FC23F307C4004CB4ED /* CreateFlashcardController.swift */,
+				3E3965FE23F307E7004CB4ED /* SearchFlashcardController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		3E39660523F31D95004CB4ED /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3E39660623F31E26004CB4ED /* FlashcardCollectionView.swift */,
+				3E39660D23F320BD004CB4ED /* FlashCardCollectionCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3E39660823F31E41004CB4ED /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3E39660923F31E68004CB4ED /* FrontCard.swift */,
+				3E39660B23F31E93004CB4ED /* BackCard.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		5790238B23F2EE39000AA216 = {
 			isa = PBXGroup;
 			children = (
@@ -85,14 +133,10 @@
 		5790239623F2EE39000AA216 /* Unit4Assessment */ = {
 			isa = PBXGroup;
 			children = (
-				5790239723F2EE39000AA216 /* AppDelegate.swift */,
-				5790239923F2EE39000AA216 /* SceneDelegate.swift */,
-				3E3965F823F30662004CB4ED /* FlashcardTabBarController.swift */,
-				3E3965FA23F307A3004CB4ED /* FlashcardCollection.swift */,
-				3E3965FC23F307C4004CB4ED /* CreateFlashcardController.swift */,
-				3E3965FE23F307E7004CB4ED /* SearchFlashcardController.swift */,
-				579023A023F2EE3B000AA216 /* Assets.xcassets */,
-				579023A223F2EE3B000AA216 /* LaunchScreen.storyboard */,
+				3E39660423F31B80004CB4ED /* Controllers */,
+				3E39660523F31D95004CB4ED /* Views */,
+				3E39660823F31E41004CB4ED /* Models */,
+				3E39660323F31B4F004CB4ED /* Supporting Files */,
 				579023A523F2EE3B000AA216 /* Info.plist */,
 			);
 			path = Unit4Assessment;
@@ -213,10 +257,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E39660C23F31E93004CB4ED /* BackCard.swift in Sources */,
 				3E3965FF23F307E7004CB4ED /* SearchFlashcardController.swift in Sources */,
-				3E3965FB23F307A3004CB4ED /* FlashcardCollection.swift in Sources */,
+				3E39661023F329F1004CB4ED /* FlashcardCollectionController.swift in Sources */,
 				3E3965F923F30662004CB4ED /* FlashcardTabBarController.swift in Sources */,
+				3E39660E23F320BD004CB4ED /* FlashCardCollectionCell.swift in Sources */,
 				5790239823F2EE39000AA216 /* AppDelegate.swift in Sources */,
+				3E39660723F31E26004CB4ED /* FlashcardCollectionView.swift in Sources */,
+				3E39660A23F31E68004CB4ED /* FrontCard.swift in Sources */,
 				5790239A23F2EE39000AA216 /* SceneDelegate.swift in Sources */,
 				3E3965FD23F307C4004CB4ED /* CreateFlashcardController.swift in Sources */,
 			);

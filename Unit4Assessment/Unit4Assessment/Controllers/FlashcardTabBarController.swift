@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import DataPersistence
 
 class FlashcardTabBarController: UITabBarController {
 
-    private lazy var flashcardCollectionVC: FlashcardCollection =  {
-        let viewController = FlashcardCollection()
+    private lazy var flashcardCollectionVC: FlashcardCollectionController =  {
+        let viewController = FlashcardCollectionController()
         viewController.tabBarItem = UITabBarItem(title: "cards", image: UIImage(systemName: "questionmark"), tag: 0)
         return viewController
     }()
