@@ -1,5 +1,5 @@
 //
-//  FlashcardTabBarController.swift
+//  FlashcardCollection.swift
 //  Unit4Assessment
 //
 //  Created by Juan Ceballos on 2/11/20.
@@ -8,13 +8,12 @@
 
 import UIKit
 
-class FlashcardTabBarController: UITabBarController {
+class FlashcardCollection: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.backgroundColor = .systemTeal
-        viewControllers = [FlashcardCollection(), CreateFlashcardController(), SearchFlashcardController()]
+
+        view.backgroundColor = .systemOrange
     }
     
 
