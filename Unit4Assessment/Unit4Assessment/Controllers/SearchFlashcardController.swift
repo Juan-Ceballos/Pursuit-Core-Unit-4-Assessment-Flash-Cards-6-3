@@ -11,6 +11,7 @@ import UIKit
 class SearchFlashcardController: UIViewController {
 
     private let searchFlashcardView = SearchFlashcardView()
+    var flashcards = [Flashcard]()
     
     override func loadView() {
         view = searchFlashcardView
@@ -26,7 +27,7 @@ class SearchFlashcardController: UIViewController {
 
 extension SearchFlashcardController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        10
+        flashcards.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

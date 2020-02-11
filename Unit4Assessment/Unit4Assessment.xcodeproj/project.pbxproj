@@ -21,6 +21,7 @@
 		3E39661923F342F2004CB4ED /* iOSQuestions.json in Resources */ = {isa = PBXBuildFile; fileRef = 3E39661823F342F2004CB4ED /* iOSQuestions.json */; };
 		3E39661B23F3475D004CB4ED /* SearchFlashcardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E39661A23F3475D004CB4ED /* SearchFlashcardView.swift */; };
 		3E39661D23F348AD004CB4ED /* SearchFlashcardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E39661C23F348AD004CB4ED /* SearchFlashcardCell.swift */; };
+		3E39661F23F357AF004CB4ED /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E39661E23F357AF004CB4ED /* Bundle+Extensions.swift */; };
 		5790239823F2EE39000AA216 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5790239723F2EE39000AA216 /* AppDelegate.swift */; };
 		5790239A23F2EE39000AA216 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5790239923F2EE39000AA216 /* SceneDelegate.swift */; };
 		579023A123F2EE3B000AA216 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 579023A023F2EE3B000AA216 /* Assets.xcassets */; };
@@ -52,6 +53,7 @@
 		3E39661823F342F2004CB4ED /* iOSQuestions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = iOSQuestions.json; sourceTree = "<group>"; };
 		3E39661A23F3475D004CB4ED /* SearchFlashcardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFlashcardView.swift; sourceTree = "<group>"; };
 		3E39661C23F348AD004CB4ED /* SearchFlashcardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFlashcardCell.swift; sourceTree = "<group>"; };
+		3E39661E23F357AF004CB4ED /* Bundle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
 		5790239423F2EE39000AA216 /* Unit4Assessment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Unit4Assessment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5790239723F2EE39000AA216 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5790239923F2EE39000AA216 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,7 +91,6 @@
 				5790239923F2EE39000AA216 /* SceneDelegate.swift */,
 				579023A023F2EE3B000AA216 /* Assets.xcassets */,
 				579023A223F2EE3B000AA216 /* LaunchScreen.storyboard */,
-				3E39661823F342F2004CB4ED /* iOSQuestions.json */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -120,9 +121,11 @@
 		3E39660823F31E41004CB4ED /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				3E39661823F342F2004CB4ED /* iOSQuestions.json */,
 				3E39661123F33559004CB4ED /* Flashcard.swift */,
 				3E39660923F31E68004CB4ED /* FrontCard.swift */,
 				3E39660B23F31E93004CB4ED /* BackCard.swift */,
+				3E39661E23F357AF004CB4ED /* Bundle+Extensions.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 				3E39661023F329F1004CB4ED /* FlashcardCollectionController.swift in Sources */,
 				3E3965F923F30662004CB4ED /* FlashcardTabBarController.swift in Sources */,
 				3E39660E23F320BD004CB4ED /* FlashCardCollectionCell.swift in Sources */,
+				3E39661F23F357AF004CB4ED /* Bundle+Extensions.swift in Sources */,
 				5790239823F2EE39000AA216 /* AppDelegate.swift in Sources */,
 				3E39660723F31E26004CB4ED /* FlashcardCollectionView.swift in Sources */,
 				3E39661D23F348AD004CB4ED /* SearchFlashcardCell.swift in Sources */,
