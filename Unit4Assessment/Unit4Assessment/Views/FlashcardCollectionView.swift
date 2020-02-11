@@ -13,10 +13,10 @@ class FlashcardCollectionView: UIView {
     public lazy var flashCardCollectionView: UICollectionView =   {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        layout.itemSize = CGSize(width: 400, height: 400)
+        layout.itemSize = CGSize(width: 300, height: 300)
         let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         collectionView.register(FlashCardCollectionCell.self, forCellWithReuseIdentifier: "flashcardCell")
-        collectionView.backgroundColor = .white
+        collectionView.backgroundColor = .systemGray
         return collectionView
     }()
 

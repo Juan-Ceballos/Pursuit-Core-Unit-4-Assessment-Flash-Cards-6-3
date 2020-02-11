@@ -18,17 +18,16 @@ import UIKit
 
 class FlashcardCollectionController: UIViewController {
 
-    let flashCardView = FlashcardCollectionView()
+    private let flashCardView = FlashcardCollectionView()
     
     override func loadView() {
         view = flashCardView
-        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         flashCardView.flashCardCollectionView.dataSource = self
-        view.backgroundColor = .systemOrange
+        view.backgroundColor = .systemGray
     }
 
 }
@@ -41,15 +40,11 @@ extension FlashcardCollectionController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "flashcardCell", for: indexPath) as! FlashCardCollectionCell
         
-        cell.backgroundColor = .systemGray
+        cell.backgroundColor = .white
         
         return cell
 
     }
     
-    
 }
 
-extension FlashcardCollectionController: UICollectionViewDelegate {
-    
-}
