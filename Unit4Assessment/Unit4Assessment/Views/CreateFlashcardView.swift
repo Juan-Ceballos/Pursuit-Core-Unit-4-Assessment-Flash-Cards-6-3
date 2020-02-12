@@ -14,6 +14,14 @@ class CreateFlashcardView: UIView {
        return "enter description"
     }()
     
+    public lazy var titleLabel: UILabel = {
+       let label = UILabel()
+        label.text = "Create New Flash card"
+        label.textAlignment = .center
+        label.font = .boldSystemFont(ofSize: 20)
+        return label
+    }()
+    
     public lazy var termTextField: UITextField =    {
         let textField = UITextField()
         textField.placeholder = "enter study term"
@@ -53,13 +61,25 @@ class CreateFlashcardView: UIView {
     }
     
     func commonInit()   {
+        setupTitleLabelConstraints()
         setupTermTextFieldConstraints()
         setupDescriptionTextView()
         setupSecondDescriptionTextView()
         setupCreateButtonConstraints()
     }
     
-    
+    func setupTitleLabelConstraints()   {
+        addSubview(titleLabel)
+        
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+        
+            titleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 8),
+            titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor)
+        
+        ])
+    }
     
     func setupTermTextFieldConstraints()    {
         addSubview(termTextField)
@@ -68,7 +88,7 @@ class CreateFlashcardView: UIView {
         
         NSLayoutConstraint.activate([
         
-            termTextField.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 100),
+            termTextField.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 100),
             termTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
             termTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8)
         
