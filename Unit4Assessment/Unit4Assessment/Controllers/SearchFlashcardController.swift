@@ -21,6 +21,7 @@ class SearchFlashcardController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemTeal
         searchFlashcardView.searchFlashcardCollectionView.dataSource = self
+        searchFlashcardView.searchFlashcardCollectionView.delegate = self
         loadFlahshcards()
     }
     
@@ -46,4 +47,12 @@ extension SearchFlashcardController: UICollectionViewDataSource {
     }
     
     
+}
+
+extension SearchFlashcardController: UICollectionViewDelegate   {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //print("pressed")
+        
+        
+    }
 }

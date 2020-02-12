@@ -14,7 +14,18 @@ class SearchFlashcardCell: UICollectionViewCell {
     
     public lazy var termLabel: UILabel =    {
         let label = UILabel()
+        label.numberOfLines = 0
+        label.textAlignment = .center
         return label
+    }()
+    
+    public lazy var cellImage: UIImageView = {
+        let image = UIImageView()
+        image.contentMode = .scaleAspectFill
+        image.clipsToBounds = true
+        //image.backgroundColor = .red
+        //image.alpha = 0
+        return image
     }()
     
     override init(frame: CGRect) {
@@ -32,20 +43,38 @@ class SearchFlashcardCell: UICollectionViewCell {
     }
     
     func commonInit()   {
-        setupTermLabelText()
+        setupImageViewConstraints()
+        setupTermLabelTextConstraints()
     }
     
-    private func setupTermLabelText()   {
+    
+    private func setupImageViewConstraints()    {
+        addSubview(cellImage)
+        
+        cellImage.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+        
+            cellImage.leadingAnchor.constraint(equalTo: leadingAnchor),
+            cellImage.trailingAnchor.constraint(equalTo: trailingAnchor),
+            cellImage.topAnchor.constraint(equalTo: topAnchor),
+            cellImage.bottomAnchor.constraint(equalTo: bottomAnchor)
+        
+        ])
+    }
+    
+    private func setupTermLabelTextConstraints()   {
         addSubview(termLabel)
         
         termLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
         
-            termLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
+            termLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
+            termLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
             termLabel.centerYAnchor.constraint(equalTo: centerYAnchor)
-        
         ])
     }
+    
 }
 
