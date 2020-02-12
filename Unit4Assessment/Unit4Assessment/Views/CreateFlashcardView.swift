@@ -35,6 +35,13 @@ class CreateFlashcardView: UIView {
         return textView
     }()
     
+    public lazy var createButton: UIButton =    {
+       let button = UIButton()
+        button.setTitle("Create", for: .normal)
+        button.setTitleColor(.systemBlue, for: .normal)
+        return button
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
         commonInit()
@@ -49,7 +56,10 @@ class CreateFlashcardView: UIView {
         setupTermTextFieldConstraints()
         setupDescriptionTextView()
         setupSecondDescriptionTextView()
+        setupCreateButtonConstraints()
     }
+    
+    
     
     func setupTermTextFieldConstraints()    {
         addSubview(termTextField)
@@ -92,6 +102,19 @@ class CreateFlashcardView: UIView {
             secondDescriptionTextView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
         
             secondDescriptionTextView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.25)
+        ])
+    }
+    
+    func setupCreateButtonConstraints() {
+        addSubview(createButton)
+        
+        createButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+        
+            createButton.topAnchor.constraint(equalTo: secondDescriptionTextView.bottomAnchor, constant: 20),
+            createButton.centerXAnchor.constraint(equalTo: centerXAnchor)
+        
         ])
     }
     
