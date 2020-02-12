@@ -18,7 +18,7 @@ import UIKit
 import DataPersistence
 
 class FlashcardCollectionController: UIViewController {
-
+    
     var dataPersistence: DataPersistence<Flashcard>!
     private let flashCardView = FlashcardCollectionView()
     
@@ -33,7 +33,7 @@ class FlashcardCollectionController: UIViewController {
         flashCardView.flashCardCollectionView.dataSource = self
         view.backgroundColor = .systemGray
     }
-
+    
 }
 
 extension FlashcardCollectionController: UICollectionViewDataSource {
@@ -47,8 +47,20 @@ extension FlashcardCollectionController: UICollectionViewDataSource {
         cell.backgroundColor = .white
         
         return cell
-
+        
     }
+    
+}
+
+extension FlashcardCollectionController: DataPersistenceDelegate    {
+    func didSaveItem<T>(_ persistenceHelper: DataPersistence<T>, item: T) where T : Decodable, T : Encodable, T : Equatable {
+        flashCardView.flashCardCollectionView.reloadData()
+    }
+    
+    func didDeleteItem<T>(_ persistenceHelper: DataPersistence<T>, item: T) where T : Decodable, T : Encodable, T : Equatable {
+        
+    }
+    
     
 }
 

@@ -10,7 +10,7 @@ import UIKit
 import DataPersistence
 
 class CreateFlashcardController: UIViewController {
-
+    
     var dataPersistence: DataPersistence<Flashcard>!
     private let createFlashCardView = CreateFlashcardView()
     
@@ -23,7 +23,7 @@ class CreateFlashcardController: UIViewController {
         view.backgroundColor = .systemGreen
         createFlashCardView.termTextField.delegate = self
     }
-
+    
 }
 
 extension CreateFlashcardController: UITextFieldDelegate  {

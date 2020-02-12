@@ -19,7 +19,7 @@ class FlashcardCollectionView: UIView {
         collectionView.backgroundColor = .systemGray
         return collectionView
     }()
-
+    
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
         commonInit()
@@ -40,12 +40,12 @@ class FlashcardCollectionView: UIView {
         flashCardCollectionView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-        
+            
             flashCardCollectionView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             flashCardCollectionView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
             flashCardCollectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
             flashCardCollectionView.trailingAnchor.constraint(equalTo: trailingAnchor)
-        
+            
         ])
     }
     

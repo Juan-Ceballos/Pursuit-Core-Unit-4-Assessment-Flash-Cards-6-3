@@ -11,11 +11,11 @@ import UIKit
 class CreateFlashcardView: UIView {
     
     public lazy var defaultText: String =   {
-       return "enter description"
+        return "enter description"
     }()
     
     public lazy var titleLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.text = "Create New Flash card"
         label.textAlignment = .center
         label.font = .boldSystemFont(ofSize: 20)
@@ -45,7 +45,7 @@ class CreateFlashcardView: UIView {
     }()
     
     public lazy var createButton: UIButton =    {
-       let button = UIButton()
+        let button = UIButton()
         button.setTitle("Create", for: .normal)
         button.setTitleColor(.systemBlue, for: .normal)
         return button
@@ -75,10 +75,10 @@ class CreateFlashcardView: UIView {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-        
+            
             titleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 8),
             titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor)
-        
+            
         ])
     }
     
@@ -88,11 +88,11 @@ class CreateFlashcardView: UIView {
         termTextField.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-        
+            
             termTextField.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 100),
             termTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
             termTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8)
-        
+            
         ])
     }
     
@@ -102,11 +102,11 @@ class CreateFlashcardView: UIView {
         descriptionTextView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-        
+            
             descriptionTextView.topAnchor.constraint(equalTo: termTextField.bottomAnchor, constant: 20),
             descriptionTextView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
             descriptionTextView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
-        
+            
             descriptionTextView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.25)
         ])
     }
@@ -117,11 +117,11 @@ class CreateFlashcardView: UIView {
         secondDescriptionTextView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-        
+            
             secondDescriptionTextView.topAnchor.constraint(equalTo: descriptionTextView.bottomAnchor, constant: 11),
             secondDescriptionTextView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
             secondDescriptionTextView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
-        
+            
             secondDescriptionTextView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.25)
         ])
     }
@@ -132,10 +132,10 @@ class CreateFlashcardView: UIView {
         createButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-        
+            
             createButton.topAnchor.constraint(equalTo: secondDescriptionTextView.bottomAnchor, constant: 20),
             createButton.centerXAnchor.constraint(equalTo: centerXAnchor)
-        
+            
         ])
     }
     

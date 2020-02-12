@@ -18,8 +18,8 @@ extension Flashcard {
         var flashcards = [Flashcard]()
         
         guard let fileURL = Bundle.main.url(forResource: "iOSQuestions", withExtension: "json")
-        else    {
-            fatalError()
+            else    {
+                fatalError()
         }
         
         do  {

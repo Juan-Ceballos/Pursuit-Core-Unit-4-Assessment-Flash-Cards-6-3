@@ -65,20 +65,20 @@ class SearchFlashcardCell: UICollectionViewCell {
     }
     
     private func animate() {
-      let duration: Double = 1.0 // seconds
-      if isShowingImage {
-        UIView.transition(with: self, duration: duration, options: [.transitionFlipFromRight], animations: {
-          self.cellImage.alpha = 0.0
-          self.descriptionTextView.alpha = 1.0
-            print("0 to 1")
-        }, completion: nil)
-      } else {
-        UIView.transition(with: self, duration: duration, options: [.transitionFlipFromLeft], animations: {
-          self.cellImage.alpha = 1.0
-          self.descriptionTextView.alpha = 0.0
-            print("1 to 0")
-        }, completion: nil)
-      }
+        let duration: Double = 1.0 // seconds
+        if isShowingImage {
+            UIView.transition(with: self, duration: duration, options: [.transitionFlipFromRight], animations: {
+                self.cellImage.alpha = 0.0
+                self.descriptionTextView.alpha = 1.0
+                print("0 to 1")
+            }, completion: nil)
+        } else {
+            UIView.transition(with: self, duration: duration, options: [.transitionFlipFromLeft], animations: {
+                self.cellImage.alpha = 1.0
+                self.descriptionTextView.alpha = 0.0
+                print("1 to 0")
+            }, completion: nil)
+        }
     }
     
     override init(frame: CGRect) {
@@ -114,12 +114,12 @@ class SearchFlashcardCell: UICollectionViewCell {
         cellImage.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-        
+            
             cellImage.leadingAnchor.constraint(equalTo: leadingAnchor),
             cellImage.trailingAnchor.constraint(equalTo: trailingAnchor),
             cellImage.topAnchor.constraint(equalTo: topAnchor),
             cellImage.bottomAnchor.constraint(equalTo: bottomAnchor)
-        
+            
         ])
     }
     
@@ -129,7 +129,7 @@ class SearchFlashcardCell: UICollectionViewCell {
         termLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-        
+            
             termLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
             termLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
             termLabel.centerYAnchor.constraint(equalTo: centerYAnchor)
@@ -142,7 +142,7 @@ class SearchFlashcardCell: UICollectionViewCell {
         descriptionTextView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-        
+            
             descriptionTextView.leadingAnchor.constraint(equalTo: leadingAnchor),
             descriptionTextView.trailingAnchor.constraint(equalTo: trailingAnchor),
             descriptionTextView.topAnchor.constraint(equalTo: topAnchor),
@@ -156,10 +156,10 @@ class SearchFlashcardCell: UICollectionViewCell {
         addButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-        
+            
             addButton.topAnchor.constraint(equalTo: topAnchor, constant: 8),
             addButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8)
-        
+            
         ])
     }
     

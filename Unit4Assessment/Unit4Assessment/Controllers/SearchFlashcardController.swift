@@ -10,7 +10,7 @@ import UIKit
 import DataPersistence
 
 class SearchFlashcardController: UIViewController {
-
+    
     var dataPersistence: DataPersistence<Flashcard>!
     private let searchFlashcardView = SearchFlashcardView()
     var flashcards = [Flashcard]()
@@ -30,7 +30,7 @@ class SearchFlashcardController: UIViewController {
     func loadFlahshcards()   {
         flashcards = Flashcard.fetchIOSQuestions()
     }
-
+    
 }
 
 extension SearchFlashcardController: UICollectionViewDataSource {
@@ -53,9 +53,6 @@ extension SearchFlashcardController: UICollectionViewDataSource {
 
 extension SearchFlashcardController: UICollectionViewDelegate   {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //print("pressed")
-        
-        // press this cell, transition image view in this cell
         
     }
 }
