@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import DataPersistence
 
 class SearchFlashcardController: UIViewController {
 
+    var dataPersistence: DataPersistence<Flashcard>!
     private let searchFlashcardView = SearchFlashcardView()
     var flashcards = [Flashcard]()
     

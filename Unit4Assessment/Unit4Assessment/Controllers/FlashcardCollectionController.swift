@@ -15,10 +15,14 @@
 //
 
 import UIKit
+import DataPersistence
 
 class FlashcardCollectionController: UIViewController {
 
+    var dataPersistence: DataPersistence<Flashcard>!
     private let flashCardView = FlashcardCollectionView()
+    
+    var flashcards = [Flashcard]()
     
     override func loadView() {
         view = flashCardView
@@ -34,7 +38,7 @@ class FlashcardCollectionController: UIViewController {
 
 extension FlashcardCollectionController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        10
+        flashcards.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

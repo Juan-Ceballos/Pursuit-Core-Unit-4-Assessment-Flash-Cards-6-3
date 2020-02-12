@@ -26,6 +26,7 @@ class CreateFlashcardView: UIView {
         let textField = UITextField()
         textField.placeholder = "enter study term"
         textField.borderStyle = .roundedRect
+        textField.autocorrectionType = .no
         return textField
     }()
     
