@@ -28,6 +28,13 @@ class CreateFlashcardView: UIView {
         return textView
     }()
     
+    public lazy var secondDescriptionTextView: UITextView =   {
+        let textView = UITextView()
+        textView.text = defaultText
+        textView.textColor = .systemGray
+        return textView
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
         commonInit()
@@ -41,6 +48,7 @@ class CreateFlashcardView: UIView {
     func commonInit()   {
         setupTermTextFieldConstraints()
         setupDescriptionTextView()
+        setupSecondDescriptionTextView()
     }
     
     func setupTermTextFieldConstraints()    {
@@ -68,7 +76,22 @@ class CreateFlashcardView: UIView {
             descriptionTextView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
             descriptionTextView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
         
-            descriptionTextView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.35)
+            descriptionTextView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.25)
+        ])
+    }
+    
+    func setupSecondDescriptionTextView() {
+        addSubview(secondDescriptionTextView)
+        
+        secondDescriptionTextView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+        
+            secondDescriptionTextView.topAnchor.constraint(equalTo: descriptionTextView.bottomAnchor, constant: 11),
+            secondDescriptionTextView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
+            secondDescriptionTextView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
+        
+            secondDescriptionTextView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.25)
         ])
     }
     
