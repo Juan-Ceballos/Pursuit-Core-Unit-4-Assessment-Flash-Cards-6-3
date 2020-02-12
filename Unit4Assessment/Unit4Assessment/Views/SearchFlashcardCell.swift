@@ -28,6 +28,34 @@ class SearchFlashcardCell: UICollectionViewCell {
         return image
     }()
     
+    private lazy var tapGesture: UITapGestureRecognizer = {
+        let gesture = UITapGestureRecognizer()
+        gesture.addTarget(self, action: #selector(didTap(_:)))
+        return gesture
+    }()
+    
+    @objc private func didTap(_ gesture: UITapGestureRecognizer)    {
+        self.animate()
+    }
+    
+    private var isShowingImage = false
+
+    
+    private func animate() {
+      let duration: Double = 1.0 // seconds
+      if isShowingImage {
+        UIView.transition(with: self, duration: duration, options: [.transitionFlipFromRight], animations: {
+          self.cellImage.alpha = 1.0
+          //self.articleTitle.alpha = 0.0
+        }, completion: nil)
+      } else {
+        UIView.transition(with: self, duration: duration, options: [.transitionFlipFromLeft], animations: {
+          self.cellImage.alpha = 0.0
+          //self.articleTitle.alpha = 1.0
+        }, completion: nil)
+      }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -45,6 +73,8 @@ class SearchFlashcardCell: UICollectionViewCell {
     func commonInit()   {
         setupImageViewConstraints()
         setupTermLabelTextConstraints()
+        cellImage.isUserInteractionEnabled = true
+        cellImage.addGestureRecognizer(tapGesture)
     }
     
     
