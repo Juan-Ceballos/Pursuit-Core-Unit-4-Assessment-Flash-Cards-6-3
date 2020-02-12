@@ -11,6 +11,7 @@ import UIKit
 class SearchFlashcardCell: UICollectionViewCell {
     
     public let cellReuseIdentifier = "searchFlashcardCell"
+    private var isShowingImage = false
     
     public lazy var termLabel: UILabel =    {
         let label = UILabel()
@@ -19,12 +20,25 @@ class SearchFlashcardCell: UICollectionViewCell {
         return label
     }()
     
+    public lazy var addButton: UIButton =   {
+        let button = UIButton()
+        button.setImage(UIImage(systemName: "plus"), for: .normal)
+        return button
+    }()
+    
+    public lazy var descriptionTextView: UITextView = {
+        let textView = UITextView()
+        textView.alpha = 0
+        textView.textAlignment = .center
+        textView.allowsEditingTextAttributes = false
+        textView.isSelectable = false
+        return textView
+    }()
+    
     public lazy var cellImage: UIImageView = {
         let image = UIImageView()
         image.contentMode = .scaleAspectFill
         image.clipsToBounds = true
-        //image.backgroundColor = .red
-        //image.alpha = 0
         return image
     }()
     
@@ -35,23 +49,23 @@ class SearchFlashcardCell: UICollectionViewCell {
     }()
     
     @objc private func didTap(_ gesture: UITapGestureRecognizer)    {
+        isShowingImage.toggle()
         self.animate()
     }
-    
-    private var isShowingImage = false
-
     
     private func animate() {
       let duration: Double = 1.0 // seconds
       if isShowingImage {
         UIView.transition(with: self, duration: duration, options: [.transitionFlipFromRight], animations: {
-          self.cellImage.alpha = 1.0
-          //self.articleTitle.alpha = 0.0
+          self.cellImage.alpha = 0.0
+          self.descriptionTextView.alpha = 1.0
+            print("0 to 1")
         }, completion: nil)
       } else {
         UIView.transition(with: self, duration: duration, options: [.transitionFlipFromLeft], animations: {
-          self.cellImage.alpha = 0.0
-          //self.articleTitle.alpha = 1.0
+          self.cellImage.alpha = 1.0
+          self.descriptionTextView.alpha = 0.0
+            print("1 to 0")
         }, completion: nil)
       }
     }
@@ -68,11 +82,14 @@ class SearchFlashcardCell: UICollectionViewCell {
     
     func configureCell(flashcard: Flashcard)    {
         termLabel.text = flashcard.quizTitle
+        descriptionTextView.text = flashcard.facts.randomElement()
     }
     
     func commonInit()   {
         setupImageViewConstraints()
         setupTermLabelTextConstraints()
+        setupAddButtonConstraints()
+        setupDescriptionTextViewConstraints()
         cellImage.isUserInteractionEnabled = true
         cellImage.addGestureRecognizer(tapGesture)
     }
@@ -103,6 +120,33 @@ class SearchFlashcardCell: UICollectionViewCell {
             termLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
             termLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
             termLabel.centerYAnchor.constraint(equalTo: centerYAnchor)
+        ])
+    }
+    
+    private func setupDescriptionTextViewConstraints()  {
+        addSubview(descriptionTextView)
+        
+        descriptionTextView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+        
+            descriptionTextView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            descriptionTextView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            descriptionTextView.topAnchor.constraint(equalTo: topAnchor),
+            descriptionTextView.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
+    }
+    
+    private func setupAddButtonConstraints()   {
+        addSubview(addButton)
+        
+        addButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+        
+            addButton.topAnchor.constraint(equalTo: topAnchor, constant: 8),
+            addButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8)
+        
         ])
     }
     
