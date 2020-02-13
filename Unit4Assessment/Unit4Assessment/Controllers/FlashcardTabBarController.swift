@@ -36,7 +36,6 @@ class FlashcardTabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         view.backgroundColor = .systemTeal
         viewControllers = [flashcardCollectionVC, createFlashcardCollectionVC, searchFlaschcardVC]
     }

@@ -31,10 +31,12 @@ class CreateFlashcardController: UIViewController {
 }
 
 extension CreateFlashcardController: UITextFieldDelegate  {
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
+    
 }
 
 extension CreateFlashcardController: UITextViewDelegate   {
@@ -52,4 +54,5 @@ extension CreateFlashcardController: UITextViewDelegate   {
             textView.textColor = .systemGray
         }
     }
+    
 }

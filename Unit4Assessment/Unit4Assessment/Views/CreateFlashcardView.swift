@@ -48,8 +48,21 @@ class CreateFlashcardView: UIView {
         let button = UIButton()
         button.setTitle("Create", for: .normal)
         button.setTitleColor(.systemBlue, for: .normal)
+        button.addTarget(self, action: #selector(createButtonPressed(_:)), for: .touchUpInside)
         return button
     }()
+    
+    @objc private func createButtonPressed(_ sender: UIButton) {
+        print("pressed")
+        blink()
+      // step 3: custom protocol
+      //delegate?.didSelectMoreButton(self, article: currentArticle)
+    }
+    
+    func blink() {
+            createButton.alpha = 0.2
+        UIView.animate(withDuration: 0.2, delay: 0.0, options: [.curveLinear], animations: {self.createButton.alpha = 1.0}, completion: nil)
+        }
     
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
