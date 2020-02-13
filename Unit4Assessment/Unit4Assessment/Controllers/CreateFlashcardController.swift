@@ -9,6 +9,8 @@
 import UIKit
 import DataPersistence
 
+// create/save? into Flashcard Object
+
 class CreateFlashcardController: UIViewController {
     
     var dataPersistence: DataPersistence<Flashcard>!
@@ -21,6 +23,8 @@ class CreateFlashcardController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemGreen
+        createFlashCardView.descriptionTextView.delegate = self
+        createFlashCardView.secondDescriptionTextView.delegate = self
         createFlashCardView.termTextField.delegate = self
     }
     
@@ -35,4 +39,17 @@ extension CreateFlashcardController: UITextFieldDelegate  {
 
 extension CreateFlashcardController: UITextViewDelegate   {
     
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.text == "enter description" && textView.textColor == .systemGray    {
+            textView.text = ""
+            textView.textColor = .black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text == ""  {
+            textView.text = "enter description"
+            textView.textColor = .systemGray
+        }
+    }
 }
